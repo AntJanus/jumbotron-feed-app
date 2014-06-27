@@ -9,44 +9,21 @@ var _         = require('lodash');
 var async     = require('async');
 var md        = require('marked');
 
-//routes
-app.get('/*', function(req,res) {
-  var slug = req.params[0].split('/');
-  var payload = {};
-  var format = req.query.format ? req.query.format : null;
-  payload = reader.getFile(slug);
-
-  if (payload.error) {
-    res.render('404', payload);
-  } else {
-    payload.path.shift();
-    var path = payload.path.join('/');
-    var meta = {};
-
-    meta.children = function(callback) {
-      reader.getChildren(path, 0, function(result) {
-        callback(null, result);
-      });
-    };
-
-    meta.main = function(callback) {
-      reader.getChildren('', 0, function(result) {
-        callback(null, result);
-      });
-    };
-
-    async.parallel(meta, function(err, result) {
-      payload.children = result.children;
-      payload.site = config.site;
-      payload.main = result.main;
-
-      if (format === 'json') {
-        res.send(payload);
-      } else {
-        payload.md = md;
-        res.render('index', payload);
-      }
+app.get('/', function(req,res) {
+    var slug = [''];
+    var payload = {};
+    payload = reader.getChildren('/', 0, function(result) {
+        if (result.length > 0) {
+            res.send(result);
+        }
     });
-  }
+});
+
+app.get('/*', function(req,res) {
+    var slug = req.params;
+    var payload = {};
+    payload = reader.getFile(slug);
+
+    res.send(payload);
 });
 
