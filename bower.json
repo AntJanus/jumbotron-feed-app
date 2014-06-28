@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "dependencies": {
         "bootstrap": "3.2.x",
-        "jumbotron-theme": "git@github.com:AntJanus/jumbotron-bootstrap-theme.git",
+        "jumbotron-theme": "https://github.com/AntJanus/jumbotron-bootstrap-theme.git",
         "vue": "0.10.x"
     }
 }
