@@ -17,16 +17,17 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-cli": "~0.1.13",
-    "grunt-contrib-jshint": "~0.7.2",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-less": "~0.11.0",
+    "grunt-component": "^0.1.8",
     "grunt-contrib-copy": "~0.5.x",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-less": "~0.11.0",
+    "grunt-contrib-watch": "~0.5.3",
     "grunt-develop": "~0.2.2",
     "grunt-mocha-test": "~0.8.1",
-    "mocha": "1.17.1",
-    "should": "3.1.2",
-    "time-grunt": "~0.1.1",
     "load-grunt-tasks": "~0.2.0",
-    "request": "~2.27.0"
+    "mocha": "1.17.1",
+    "request": "~2.27.0",
+    "should": "3.1.2",
+    "time-grunt": "~0.1.1"
   }
 }
