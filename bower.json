@@ -1,8 +1,9 @@
 {
-    "name": "Popstar CMS",
+    "name": "Jumbotron App",
     "version": "0.0.1",
     "dependencies": {
-        "tseczka-CSS-framework": "v0.0.x",
-        "normalize.css": "3.0.x"
+        "bootstrap": "3.2.x",
+        "jumbotron-theme": "git@github.com:AntJanus/jumbotron-bootstrap-theme.git",
+        "vue": "0.10.x"
     }
 }

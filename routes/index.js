@@ -9,7 +9,7 @@ var _         = require('lodash');
 var async     = require('async');
 var md        = require('marked');
 
-app.get('/', function(req,res) {
+app.get('api/', function(req,res) {
     var slug = [''];
     var payload = {};
     payload = reader.getChildren('/', 0, function(result) {
@@ -19,7 +19,7 @@ app.get('/', function(req,res) {
     });
 });
 
-app.get('/*', function(req,res) {
+app.get('api/*', function(req,res) {
     var slug = req.params;
     var payload = {};
     payload = reader.getFile(slug);

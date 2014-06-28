@@ -39,6 +39,14 @@ module.exports = function (grunt) {
       },
       "public/css/style.css": "public/css/style.less"
     },
+    copy: {
+        js: {
+          expand: true,
+          flatten: true,
+          src: 'bower_components/vue/dist/*',
+          dest: 'public/js/',
+        },
+    },
     watch: {
       options: {
         nospawn: true,
@@ -59,9 +67,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['public/js/*.js'],
-        options: {
-          livereload: reloadPort
-        }
+        tasks: ['copy:js'],
       },
       css: {
         files: ['public/css/*.css'],
@@ -108,7 +114,7 @@ module.exports = function (grunt) {
     }, 500);
   });
 
-  grunt.registerTask('default', ['develop', 'watch']);
+  grunt.registerTask('default', ['less', 'copy','develop', 'watch']);
   grunt.registerTask('test', ['mochaTest']);
 };
 
