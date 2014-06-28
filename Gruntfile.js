@@ -115,6 +115,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('default', ['less', 'copy','develop', 'watch']);
+  grunt.registerTask('build', ['less', 'copy']);
   grunt.registerTask('test', ['mochaTest']);
 };
 
