@@ -4579,12 +4579,17 @@ module.exports = {
 require.register("./src/components/jumbotron-holder", function (exports, module) {
 module.exports = {
     className: 'jumbotron-holder',
-    template: require("./src/components/jumbotron-holder/template.html")
+    template: require("./src/components/jumbotron-holder/template.html"),
+    data: {
+        expandToggle: false
+    },
+    methods: {
+    }
 }
 
 });
 
-require.define("./src/components/jumbotron-holder/template.html", "<div class=\"jumbotron\" style=\"background-image: url('{{jumbotron.image}}') \">\n      <div class=\"container\">\n        <div class=\"row\">\n          <div class=\"col-md-offset-3 col-md-6 text-center jumbotron-text jumbotron-image-light\">\n            <h1>{{jumbotron.title}}</h1>\n            <p>{{jumbotron.content}}</p>\n            <a href=\"/{{jumbotron.link}}\" class=\"btn btn-primary\">A link to download</a>\n      </div>\n    </div>\n  </div>\n</div>\n");
+require.define("./src/components/jumbotron-holder/template.html", "<div class=\"jumbotron\" style=\"background-image: url('{{jumbotron.image}}') \">\n      <div class=\"container\">\n        <div class=\"row\">\n          <div class=\"col-md-offset-3 col-md-6 text-center jumbotron-text jumbotron-image-light\">\n            <h1>{{jumbotron.title}}</h1>\n            <p>{{jumbotron.content}}</p>\n            <a href=\"/{{jumbotron.link}}\" class=\"btn btn-primary\">A link to download</a>\n      </div>\n    </div>\n  </div>\n  <div class=\"meta\">\n    <a href=\"/\" class=\"btn \"><span class=\"glyphicon glyphicon-resize-full\"></span></a>\n    <a href=\"/\" class=\"btn \"><span class=\"glyphicon glyphicon-eye-open\"></span></a>\n    <a href=\"/\" class=\"btn \"><span class=\"glyphicon glyphicon-magnet\"></span></a>\n  </div>\n</div>\n");
 
 require.register("vue-component-example", function (exports, module) {
 var Vue = require("yyx990803~vue@v0.10.5")

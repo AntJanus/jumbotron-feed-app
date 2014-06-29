@@ -52,11 +52,11 @@ module.exports = function (grunt) {
       "public/css/style.css": "public/css/style.less"
     },
     copy: {
-        js: {
+        bootstrap: {
           expand: true,
           flatten: true,
-          src: 'bower_components/vue/dist/*',
-          dest: 'public/js/',
+          src: 'bower_components/bootstrap/fonts/*',
+          dest: 'public/fonts/',
         },
     },
     watch: {
@@ -126,8 +126,8 @@ module.exports = function (grunt) {
     }, 500);
   });
 
-  grunt.registerTask('default', ['less', 'componentbuild:dev', 'develop', 'watch']);
-  grunt.registerTask('build', ['less', 'componentbuild:dev']);
+  grunt.registerTask('default', ['less', 'copy', 'componentbuild:dev', 'develop', 'watch']);
+  grunt.registerTask('build', ['less', 'copy', 'componentbuild:dev']);
   grunt.registerTask('test', ['mochaTest']);
 };
 
