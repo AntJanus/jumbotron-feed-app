@@ -1,20 +1,14 @@
+require('insert-css')(require('./app.css'))
+
 var Vue = require('vue')
 
 new Vue({
-
-    el: '#jumbotrons',
-
-    directives: {
-        flip: require('./directives/flip')
-    },
-
-    filters: {
-        reverse: require('./filters/reverse')
-    },
-
+    el: '#app',
     components: {
-        "jumbotron-holder": require('jumbotron-holder')
+        "jumbotron-holder": require('./jumbotron-holder')
     },
+    // require html enabled by the partialify transform
+    template: require('./app.html'),
 
     data: {
         page: 1,
@@ -28,6 +22,7 @@ new Vue({
             xhr.open('GET', '/api/')
             xhr.onload = function() {
                 self.jumbotrons = JSON.parse(xhr.responseText);
+                console.log(self.jumbotrons);
             }
             xhr.send()
         }
@@ -38,5 +33,4 @@ new Vue({
             this.fetchData(this.page * 10, 0);
         })
     }
-
 })

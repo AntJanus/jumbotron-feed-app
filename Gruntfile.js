@@ -18,18 +18,6 @@ module.exports = function (grunt) {
         file: 'server.js'
       }
     },
-    componentbuild: {
-      dev: {
-          options: {
-            standalone: true,
-            copy: true,
-            install: true,
-            verbose: true
-          },
-          src: 'public',
-          dest: 'public/build'
-      }
-    },
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -79,7 +67,6 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['public/src'],
-        tasks: ['componentbuild:dev'],
       },
       css: {
         files: ['public/css/*.css'],
@@ -126,8 +113,8 @@ module.exports = function (grunt) {
     }, 500);
   });
 
-  grunt.registerTask('default', ['less', 'copy', 'componentbuild:dev', 'develop', 'watch']);
-  grunt.registerTask('build', ['less', 'copy', 'componentbuild:dev']);
+  grunt.registerTask('default', ['less', 'copy', 'develop', 'watch']);
+  grunt.registerTask('build', ['less', 'copy']);
   grunt.registerTask('test', ['mochaTest']);
 };
 

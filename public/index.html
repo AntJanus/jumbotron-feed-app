@@ -3,34 +3,32 @@
     <head>
         <title></title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="/build/build.css">
         <link rel="stylesheet" type="text/css" href="/css/style.css">
     </head>
     <body>
-   <header class="navbar navbar-default navbar-white" role="banner">
-      <div class="container">
-        <div class="navbar-header">
-          <button class="navbar-toggle" type="button" data-toggle="collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="/" class="navbar-brand">AJ Jumbotron</a>
-        </div>
-        <nav class="collapse navbar-collapse" role="navigation">
-          <ul class="nav navbar-nav navbar-right">
+       <header class="navbar navbar-default navbar-white" role="banner">
+          <div class="container">
+            <div class="navbar-header">
+              <button class="navbar-toggle" type="button" data-toggle="collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a href="/" class="navbar-brand">AJ Jumbotron</a>
+            </div>
+            <nav class="collapse navbar-collapse" role="navigation">
+              <ul class="nav navbar-nav navbar-right">
 
-            <li>
-              <a href="/blog">Blog</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-     <section id="jumbotrons">
-            <div v-repeat="jumbotron: jumbotrons" v-component="jumbotron-holder"></div>
-        </section>
-        <script src="build/build.js"></script>
+                <li>
+                  <a href="/blog">Blog</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div id="app">
+        </div>
+        <script src="dist/bundle.js"></script>
     </body>
 </html>
