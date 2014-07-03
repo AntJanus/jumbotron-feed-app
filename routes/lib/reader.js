@@ -143,7 +143,7 @@ reader.prototype = {
     }
 
     files.sort(function(a, b) {
-      self.fileSort(a, b);
+      return self.fileSort(a, b);
     });
 
     files.slice(0, limit);

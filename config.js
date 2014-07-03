@@ -1,7 +1,7 @@
 //site config
 module.exports = {
   reader: {
-    postsPerPage: 5
+    postsPerPage: 10
   },
   cache: {
     enabled: false
