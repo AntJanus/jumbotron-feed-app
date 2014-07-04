@@ -1,16 +1,24 @@
-<div class="jumbotron" style="background-image: url('{{image}}') ">
+<div class="jumbotron" v-style="
+    background-image: 'url(' + jumbotron.image + ')'
+    " v-class="
+        toggle-visilibity: jumbotron.visibility,
+        toggle-fixed: jumbotron.fixed,
+        toggle-expand: jumbotron.expand,
+        toggle-bottom: jumbotron.bottom
+    ">
       <div class="container">
         <div class="row">
           <div class="col-md-offset-3 col-md-6 text-center jumbotron-text jumbotron-image-light">
-            <h1>{{title}}</h1>
-            <p>{{content}}</p>
-            <a href="/{{link}}" class="btn btn-primary">A link to download</a>
+            <h1>{{jumbotron.title}}</h1>
+            <p>{{jumbotron.content}}</p>
+            <a href="/{{jumbotron.link}}" class="btn btn-primary">A link to download</a>
       </div>
     </div>
   </div>
   <div class="meta">
-    <a href="/" class="btn "><span class="glyphicon glyphicon-resize-full"></span></a>
-    <a href="/" class="btn "><span class="glyphicon glyphicon-eye-open"></span></a>
-    <a href="/" class="btn "><span class="glyphicon glyphicon-magnet"></span></a>
+    <a href="/" class="btn" v-on="click: toggle(expanded,$event)"><span class="glyphicon glyphicon-resize-full"></span></a>
+    <a href="/" class="btn" v-on="click: toggle(visibility,$event)"><span class="glyphicon glyphicon-eye-open"></span></a>
+    <a href="/" class="btn" v-on="click: toggle(fixed,$event)"><span class="glyphicon glyphicon-magnet"></span></a>
+    <a href="/" class="btn" v-on="click: toggle(bottom,$event)">bottom</a>
   </div>
 </div>
