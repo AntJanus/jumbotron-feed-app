@@ -4498,9 +4498,8 @@ module.exports = {
     id: 'jumbotron-holder',
     template: require('./template.html'),
     data: {
-        expanded: false ,
+        expanded: false,
         visible: false,
-        fixed: false,
         bottom: false,
     },
 
@@ -4520,11 +4519,6 @@ module.exports = {
             e.stopPropagation();
             e.preventDefault();
         },
-        toggleFixed: function(e) {
-            this.fixed = !this.fixed;
-            e.stopPropagation();
-            e.preventDefault();
-        },
         toggleBottom: function(e) {
             this.bottom = !this.bottom;
             e.stopPropagation();
@@ -4536,7 +4530,7 @@ module.exports = {
 },{"./style.css":31,"./template.html":32,"insert-css":1}],31:[function(require,module,exports){
 module.exports=require(28)
 },{}],32:[function(require,module,exports){
-module.exports = '<div class="jumbotron" v-style="\n    background-image: \'url(\' + jumbotron.image + \')\'\n    " v-class="\n        toggle-visilibity: visible,\n        toggle-fixed: fixed,\n        toggle-expand: expanded,\n        toggle-bottom: bottom\n    ">\n      <div class="container">\n        <div class="row">\n          <div class="col-md-offset-3 col-md-6 text-center jumbotron-text jumbotron-image-light">\n            <h1>{{jumbotron.title}}</h1>\n            <p>{{jumbotron.content}}</p>\n            <a href="{{jumbotron.link}}" class="btn btn-primary">A link to download</a>\n      </div>\n    </div>\n  </div>\n  <div class="meta">\n    <a href="/" class="btn" v-on="click: toggleExpanded($event)"><span class="glyphicon glyphicon-resize-full"></span></a>\n    <a href="/" class="btn" v-on="click: toggleVisible($event)"><span class="glyphicon glyphicon-eye-open"></span></a>\n    <a href="/" class="btn" v-on="click: toggleFixed($event)"><span class="glyphicon glyphicon-magnet"></span></a>\n    <a href="/" class="btn" v-on="click: toggleBottom($event)">bottom</a>\n  </div>\n</div>\n';
+module.exports = '<div class="jumbotron" v-style="\n    background-image: \'url(\' + jumbotron.image + \')\'\n    " v-class="\n        toggle-visibility: visible,\n        toggle-fixed: fixed,\n        toggle-expand: expanded,\n        toggle-bottom: bottom\n    ">\n      <div class="container">\n        <div class="row">\n          <div class="col-md-offset-3 col-md-6 text-center jumbotron-text jumbotron-image-light">\n            <h1>{{jumbotron.title}}</h1>\n            <p>{{jumbotron.content}}</p>\n            <a href="{{jumbotron.link}}" class="btn btn-primary">A link to download</a>\n      </div>\n    </div>\n  </div>\n  <div class="meta">\n    <a href="/" class="btn" v-on="click: toggleExpanded($event)" v-class="btn-warning: expanded, active: expanded"><span class="glyphicon glyphicon-resize-full"></span></a>\n    <a href="/" class="btn" v-on="click: toggleVisible($event)" v-class="btn-warning: visible, active: visible"><span class="glyphicon glyphicon-eye-open"></span></a>\n    <a href="/" class="btn" v-on="click: toggleBottom($event)" v-class="btn-warning: bottom, active: bottom">bottom</a>\n  </div>\n</div>\n';
 },{}],33:[function(require,module,exports){
 require('insert-css')(require('./app.css'))
 

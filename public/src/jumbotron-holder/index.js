@@ -4,9 +4,8 @@ module.exports = {
     id: 'jumbotron-holder',
     template: require('./template.html'),
     data: {
-        expanded: false ,
+        expanded: false,
         visible: false,
-        fixed: false,
         bottom: false,
     },
 
@@ -23,11 +22,6 @@ module.exports = {
         },
         toggleVisible: function(e) {
             this.visible = !this.visible;
-            e.stopPropagation();
-            e.preventDefault();
-        },
-        toggleFixed: function(e) {
-            this.fixed = !this.fixed;
             e.stopPropagation();
             e.preventDefault();
         },

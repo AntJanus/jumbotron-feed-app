@@ -1,7 +1,7 @@
 <div class="jumbotron" v-style="
     background-image: 'url(' + jumbotron.image + ')'
     " v-class="
-        toggle-visilibity: visible,
+        toggle-visibility: visible,
         toggle-fixed: fixed,
         toggle-expand: expanded,
         toggle-bottom: bottom
@@ -16,9 +16,8 @@
     </div>
   </div>
   <div class="meta">
-    <a href="/" class="btn" v-on="click: toggleExpanded($event)"><span class="glyphicon glyphicon-resize-full"></span></a>
-    <a href="/" class="btn" v-on="click: toggleVisible($event)"><span class="glyphicon glyphicon-eye-open"></span></a>
-    <a href="/" class="btn" v-on="click: toggleFixed($event)"><span class="glyphicon glyphicon-magnet"></span></a>
-    <a href="/" class="btn" v-on="click: toggleBottom($event)">bottom</a>
+    <a href="/" class="btn" v-on="click: toggleExpanded($event)" v-class="btn-warning: expanded, active: expanded"><span class="glyphicon glyphicon-resize-full"></span></a>
+    <a href="/" class="btn" v-on="click: toggleVisible($event)" v-class="btn-warning: visible, active: visible"><span class="glyphicon glyphicon-eye-open"></span></a>
+    <a href="/" class="btn" v-on="click: toggleBottom($event)" v-class="btn-warning: bottom, active: bottom">bottom</a>
   </div>
 </div>
